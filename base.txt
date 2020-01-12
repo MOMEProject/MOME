@@ -61,9 +61,9 @@ Unfortunately our prices are fixed
 i want to buy a red bike
 Should I order a red bike for you?
 what is the temperature now
-I dont have a temperature sensor
+I don't have a temperature sensor
 what is the temperature today
-I dont know
+I don't know
 i need a bike
 Okey, what are you interested in? We offer e-bikes, mountainbikes and citybikes.
 yes

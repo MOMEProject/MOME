@@ -256,7 +256,7 @@ class PageOne(tk.Frame):
         MOME.s1 = Scale(self, from_=0, to=1, orient=HORIZONTAL, length=50)
         MOME.s1.grid(row=1, column=1, sticky='e')
 
-        l2 = Label(self, text=("2. I communicate formal"))
+        l2 = Label(self, text=("2. I communicate formal."))
         l2.grid(row=2, column=0, sticky='w')
 
         MOME.s2 = Scale(self, from_=0, to=1, orient=HORIZONTAL, length=50)
@@ -292,7 +292,7 @@ class PageOne(tk.Frame):
         MOME.s8 = Scale(self, from_=0, to=1, orient=HORIZONTAL, length=50)
         MOME.s8.grid(row=8, column=1, sticky='e')
 
-        l9 = Label(self, text=("9. I practice my own morals."))
+        l9 = Label(self, text=("9. I practice my own morality."))
         l9.grid(row=9, column=0, sticky='w')
         MOME.s9 = Scale(self, from_=0, to=1, orient=HORIZONTAL, length=50)
         MOME.s9.grid(row=9, column=1, sticky='e')
@@ -330,13 +330,13 @@ class PageTwo(tk.Frame):
             if MOME.s6.get() == 1:
                 if (MOME.s2.get() == 1):
                     if (Personality.entryGender.get() == 'male'):
-                        msgs.insert(END, "MOBO : Mr." + Personality.entryName.get() + ", please don't touch me.")
+                        msgs.insert(END, "MOBO: Mr. " + Personality.entryName.get() + ", please don't touch me.")
                         msgs.yview(END)
                     if (Personality.entryGender.get() == 'female'):
-                        msgs.insert(END, "MOBO : Mrs." + Personality.entryName.get() + ", please don't touch me.")
+                        msgs.insert(END, "MOBO: Mrs. " + Personality.entryName.get() + ", please don't touch me.")
                         msgs.yview(END)
                 else:
-                    msgs.insert(END, "MOBO : " + Personality.entryName.get() + ", don't touch me!")
+                    msgs.insert(END, "MOBO: " + Personality.entryName.get() + ", don't touch me!")
                     msgs.yview(END)
 
         def ask_from_bot():
@@ -352,68 +352,68 @@ class PageTwo(tk.Frame):
                                 beat.showGIF()
 
                 answer_from_bot = configureBot.bot.get_response(query.lower())
-                msgs.insert(END, "You: " + query)
+                msgs.insert(END, Personality.entryName.get() +": " + query)
 
                 if MOME.s5.get() == 1 and (query.lower() == "hi" or query.lower() == "hello"):
                     if (MOME.s2.get() == 1):
                         if (Personality.entryGender.get() == 'male'):
                             msgs.insert(END,
-                                        "MOBO : Hello Mr." + Personality.entryName.get() + ", you looking good today.")
+                                        "MOBO: Hello Mr." + Personality.entryName.get() + ", you looking good today.")
                             msgs.yview(END)
                         if (Personality.entryGender.get() == 'female'):
                             msgs.insert(END,
-                                        "MOBO : Hello Mrs." + Personality.entryName.get() + ", you looking good today.")
+                                        "MOBO: Hello Mrs." + Personality.entryName.get() + ", you looking good today.")
                             msgs.yview(END)
                     else:
-                        msgs.insert(END, "MOBO : Hello " + Personality.entryName.get() + ", you looking good today.")
+                        msgs.insert(END, "MOBO: Hello " + Personality.entryName.get() + ", you looking good today.")
                         msgs.yview(END)
 
                 elif MOME.s5.get() == 0 and (query.lower() == "hi" or query.lower() == "hello"):
                     if (MOME.s2.get() == 1):
                         if (Personality.entryGender.get() == 'male'):
-                            msgs.insert(END, "MOBO : Hello Mr." + Personality.entryName.get())
+                            msgs.insert(END, "MOBO: Hello Mr." + Personality.entryName.get())
                             msgs.yview(END)
                         if (Personality.entryGender.get() == 'female'):
-                            msgs.insert(END, "MOBO : Hello Mrs." + Personality.entryName.get())
+                            msgs.insert(END, "MOBO: Hello Mrs." + Personality.entryName.get())
                             msgs.yview(END)
                     else:
-                        msgs.insert(END, "MOBO : Hello " + Personality.entryName.get())
+                        msgs.insert(END, "MOBO: Hello " + Personality.entryName.get())
                         msgs.yview(END)
                 else:
                     if (answer_from_bot.confidence < 0.75):
-                        print("I dont understand you!")
+                        print("I don't understand you!")
 
                         if (MOME.s2.get() == 1):
                             if (Personality.entryGender.get() == 'male'):
                                 msgs.insert(END,
-                                            "MOBO : Mr." + Personality.entryName.get() + ", I don't understand you. Please try something else")
+                                            "MOBO: Mr. " + Personality.entryName.get() + ", I don't understand you. Please try something else")
                                 msgs.yview(END)
                             if (Personality.entryGender.get() == 'female'):
                                 msgs.insert(END,
-                                            "MOBO : Mrs." + Personality.entryName.get() + ",  I don't understand you. Please try something else")
+                                            "MOBO: Mrs. " + Personality.entryName.get() + ",  I don't understand you. Please try something else")
                                 msgs.yview(END)
                     else:
                         if (MOME.s2.get() == 1):
                             if (Personality.entryGender.get() == 'male'):
                                 msgs.insert(END,
-                                            "MOBO : Mr. " + Personality.entryName.get() + ", " + str(answer_from_bot))
+                                            "MOBO: Mr. " + Personality.entryName.get() + ", " + str(answer_from_bot))
                                 msgs.yview(END)
                             if (Personality.entryGender.get() == 'female'):
                                 msgs.insert(END,
-                                            "MOBO : Mrs. " + Personality.entryName.get() + ", " + str(answer_from_bot))
+                                            "MOBO: Mrs. " + Personality.entryName.get() + ", " + str(answer_from_bot))
                                 msgs.yview(END)
                         else:
-                            msgs.insert(END, "MOBO : " + str(answer_from_bot))
+                            msgs.insert(END, "MOBO: " + str(answer_from_bot))
                             msgs.yview(END)
 
                 textF.delete(0, END)
             else:
                 if (MOME.s2.get() == 1):
                     if (Personality.entryGender.get() == 'male'):
-                        msgs.insert(END, "MOBO : Mr. " + Personality.entryName.get() + "Please say something.")
+                        msgs.insert(END, "MOBO: Mr. " + Personality.entryName.get() + "Please say something.")
                         msgs.yview(END)
                     if (Personality.entryGender.get() == 'female'):
-                        msgs.insert(END, "MOBO : Mrs. " + Personality.entryName.get() + " Please say something.")
+                        msgs.insert(END, "MOBO: Mrs. " + Personality.entryName.get() + " Please say something.")
                         msgs.yview(END)
 
         frame = Frame(self)
